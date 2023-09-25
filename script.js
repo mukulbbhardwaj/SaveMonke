@@ -4,11 +4,9 @@ let bird = document.querySelector(".bird");
 let img = document.getElementById("bird-1");
 let sound_point = new Audio("./sounds/point.mp3");
 let sound_die = new Audio("./sounds/die.mp3");
-let sound_bgm = new Audio('./sounds/bgm.m4a');
-
+let sound_bgm = new Audio("./sounds/bgm.m4a");
 
 let bird_props = bird.getBoundingClientRect();
-
 
 let background = document.querySelector(".background").getBoundingClientRect();
 
@@ -23,8 +21,7 @@ message.classList.add("messageStyle");
 document.addEventListener("keydown", (e) => {
   if (e.key == "Enter" && game_state != "Play") {
     document.querySelectorAll(".pipe_sprite").forEach((e) => {
-        e.remove();
-  
+      e.remove();
     });
     img.style.display = "block";
     bird.style.top = "40vh";
@@ -40,7 +37,7 @@ document.addEventListener("keydown", (e) => {
 function play() {
   function move() {
     if (game_state != "Play") return;
-      sound_bgm.play();
+    sound_bgm.play();
     let pipe_sprite = document.querySelectorAll(".pipe_sprite");
     pipe_sprite.forEach((element) => {
       let pipe_sprite_props = element.getBoundingClientRect();
